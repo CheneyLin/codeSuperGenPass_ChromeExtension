@@ -1,0 +1,12 @@
+{
+    "dest" : "./dev/",
+    "prod" : "./release/",
+    "data" : ["./src/*.json"],
+    "locales_en" : ["./src/_locales/en/*.*"],
+    "locales_cn" : ["./src/_locales/zh_CN/*.*"],
+    "html" : ["./src/*.html"],
+    "images" : ["./src/images/*.*"],
+    "js" : ["./src/js/*.*"],
+    "css" : ["./src/css/*.css"],
+    "less" : ["./src/css/*.less"]
+}

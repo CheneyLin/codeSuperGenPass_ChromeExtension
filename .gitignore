@@ -1,0 +1,14 @@
+# Project
+_local
+_notes
+_gulp
+.ftpconfig
+*/wav
+
+# Gulp
+node_modules
+.tinypng-sigs
+
+
+# Xcode
+.DS_Store

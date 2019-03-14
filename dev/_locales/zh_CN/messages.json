@@ -1,0 +1,35 @@
+{
+  "popup_title": {
+    "message": "超级密码",
+    "description": ""
+  },
+
+  "popup_domain_name": {
+    "message": "网站域名",
+    "description": ""
+  },
+
+  "popup_disable_subdomain_removal": {
+    "message": "保持二级域名",
+    "description": ""
+  },
+
+  "popup_master_password": {
+    "message": "输入主密码：",
+    "description": ""
+  },
+
+  "popup_your_generated_password": {
+    "message": "当前网站密码",
+    "description": ""
+  },
+
+  "popup_generate": {
+    "message": "点此生成",
+    "description": ""
+  },
+  "input_title": {
+    "message": "输入主密码回车",
+    "description": ""
+  }
+}

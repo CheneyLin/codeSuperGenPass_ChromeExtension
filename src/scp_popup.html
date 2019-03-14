@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta http-equiv="Content-Security-Policy" content="script-src 'self';">
+<link href="css/popup.css" rel="stylesheet" type="text/css" />
+  <style type="text/css">
+    
+  </style>
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/password.class.js"></script>
+  <script type="text/javascript" src="js/supergenpass.js"></script>
+  <script type="text/javascript" src="js/popup.js"></script>
+</head>
+
+<body>
+
+  <div>
+
+    <h1 id="popup_title">popup_title</h1>
+
+    <div id="domain_input">
+      <label class="main" for="domain" id="popup_domain_name">popup_domain_name</label>
+      <input id="domain" type="text">
+      <input id="domainh" type="hidden">
+    </div>
+
+    <div id="disableltdbox">
+      <input id="disabletld" type="checkbox">
+      <label for="disabletld" id="popup_disable_subdomain_removal">Disable subdomain removal</label>
+    </div>
+
+    <ul id="scp_list"></ul>
+
+    <div id="master_input" style="display: none">
+      <label class="main" id="dscr" for="Passwd">popup_master_password</label>
+      <input id="password" type="password" autofocus="autofocus">
+    </div>
+
+    <div id="generated" style="display: none">
+
+      <label class="main" for="genpasswd" id="">popup_your_generated_password</label>
+      <input id="genpasswd" type="password">
+      <div id="hint" style="display:none">Click to reveal password
+        <div></div>
+      </div>
+    </div>
+
+    <button id="regen">Generate</button>
+
+  </div>
+
+</body>
+
+</html>

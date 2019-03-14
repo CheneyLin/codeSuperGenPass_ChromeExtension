@@ -1,0 +1,35 @@
+{
+  "popup_title": {
+    "message": "SuperGenPass",
+    "description": ""
+  },
+
+  "popup_domain_name": {
+    "message": "Domain Name",
+    "description": ""
+  },
+
+  "popup_disable_subdomain_removal": {
+    "message": "Disable subdomain removal",
+    "description": ""
+  },
+
+  "popup_master_password": {
+    "message": "Master Password:",
+    "description": ""
+  },
+
+  "popup_your_generated_password": {
+    "message": "Your generated password",
+    "description": ""
+  },
+  "popup_generate": {
+    "message": "Generate",
+    "description": ""
+  },
+
+  "input_title": {
+    "message": "Enter Main Password",
+    "description": ""
+  }
+}
