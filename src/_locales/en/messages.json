@@ -15,7 +15,7 @@
   },
 
   "popup_master_password": {
-    "message": "Master Password:",
+    "message": "Master Password",
     "description": ""
   },
 
@@ -25,6 +25,22 @@
   },
   "popup_generate": {
     "message": "Generate",
+    "description": ""
+  },
+  "popup_list_title": {
+    "message": "Choose presetes",
+    "description": ""
+  },
+  "option_list_title": {
+    "message": "Profile Name",
+    "description": ""
+  },
+  "option_list_password": {
+    "message": "Master Password",
+    "description": ""
+  },
+  "option_list_stealth": {
+    "message": "Password Stealth",
     "description": ""
   },
 

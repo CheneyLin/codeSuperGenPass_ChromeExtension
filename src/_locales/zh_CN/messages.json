@@ -15,7 +15,7 @@
   },
 
   "popup_master_password": {
-    "message": "输入主密码：",
+    "message": "输入主密码",
     "description": ""
   },
 
@@ -26,6 +26,23 @@
 
   "popup_generate": {
     "message": "点此生成",
+    "description": ""
+  },
+  "popup_list_title": {
+    "message": "选择方案",
+    "description": ""
+  },
+
+  "option_list_title": {
+    "message": "配置",
+    "description": ""
+  },
+  "option_list_password": {
+    "message": "主密码",
+    "description": ""
+  },
+  "option_list_stealth": {
+    "message": "额外加盐",
     "description": ""
   },
   "input_title": {

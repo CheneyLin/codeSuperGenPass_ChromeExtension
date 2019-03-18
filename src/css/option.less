@@ -1,0 +1,400 @@
+@color-base: #b846d3;
+@color-complement: spin(@color-base, 180);
+@color-text: #4a4a4a;
+@color-tips: #a4a4a4;
+@element-width: 208px;
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  outline: none;
+}
+
+a {
+  color: #000;
+
+  &:visited {
+    color: #000;
+  }
+
+  &:active,
+  &:hover {
+    color: #999;
+  }
+}
+
+body {
+  width: 100%;
+  margin: 0 auto;
+  font-family: sans-serif;
+  background-color: rgb(248, 249, 250);
+}
+
+#header {
+  background-color: rgb(51, 103, 214);
+  height: 56px;
+  width: 100%;
+  color: #fff;
+
+  div {
+    float: left;
+    line-height: 56px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  img {
+    width: 32px;
+    height: 32px;
+    margin: 12px;
+  }
+}
+
+.wrap {
+  width: 100%;
+  min-width: 900px;
+  margin: 0 auto;
+  max-width: 1306px;
+  clear: both;
+
+  div.card {
+    position: relative;
+    width: 32%;
+    height: 208px;
+    float: left;
+    display: block;
+    border-radius: 8px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 2px rgba(60, 64, 67, 0.3);
+    box-shadow: 0 0 2px rgba(60, 64, 67, 0.3);
+    margin: 0.5%;
+
+    &.deleted {
+      background: rgba(255,128,128,0.25);
+    }
+
+    &.added {
+      background: rgba(128,255,128,0.25);
+    }
+
+    > div {
+      position: absolute;
+
+      i {
+        font-size: 12px!important;
+        line-height: 16px;
+        color: @color-tips!important;
+        font-weight: normal!important;
+        clear: both!important;
+      }
+
+      &.title {
+        top: 16px;
+        left: 16px;
+        font-size: 18px;
+        line-height: 24px;
+        font-weight: bolder;
+      }
+
+      &.length {
+        top: 16px;
+        right: 16px;
+        width: 48px;
+        height: 48px;
+        border-radius: 100%;
+        background-color: @color-base;
+        font-size: 24px;
+        color: #fff;
+        line-height: 48px;
+        text-align: center;
+      }
+
+      &.storestr {
+        top: 70px;
+        left: 16px;
+        line-height: 24px;
+        font-size: 18px;
+
+        b {
+          display: inline-block;
+          text-align: center;
+          vertical-align: super;
+          font-size: 8px;
+          line-height: 14px;
+          background-color: @color-tips;
+          width: 36px;
+          height: 14px;
+          border-radius: 3px;
+          font-weight: normal;
+          font-family: sans-serif;
+          padding: 0 5px;
+          margin-left: 5px;
+          color: #fff;
+        }
+      }
+
+      &.stealth {
+        top: 124px;
+        left: 16px;
+        font-size: 18px;
+      }
+
+      &.lengthadjust {
+        top: 80px;
+        right: 16px;
+      }
+
+      &.action {
+        top: 160px;
+        right: 16px;
+        font-size: 18px;
+
+        button {
+          height: 32px;
+          line-height: 32px;
+          font-size: 12px;
+          padding: 0 8px;
+          border-radius: 4px;
+          border: 1px solid @color-tips;
+          box-shadow: none;
+          text-shadow: none;
+          background: #fff;
+          outline: none;
+
+          &:hover {
+            background: lighten(@color-tips,30%);
+          }
+        }
+      }
+    }
+  }
+
+  div.panel {
+    .inputset {
+      position: relative;
+
+      .reveal {
+        position: absolute;
+        fill: @color-tips;
+        width: 23px;
+        height: 23px;
+        border-radius: 8px 0 0 8px;
+        text-align: center;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        font-size: 11px;
+        font-weight: bold;
+        line-height: 17px;
+        cursor: pointer;
+        float: right;
+        top: 3px;
+        right: 3px;
+      }
+    }
+
+    button#save {
+      border: 1px solid @color-base;
+
+      &:hover {
+        background: lighten(@color-base,30%);
+      }
+    }
+
+    #name {
+      margin: 0 5px 0 0;
+      padding: 5px;
+      font-size: 12px;
+      font-weight: bold;
+      border-radius: 3px;
+      border: 1px solid @color-tips;
+    }
+
+    #password,
+    #stealth {
+      margin: 0;
+      padding: 5px;
+      font-size: 12px;
+      font-weight: bold;
+      border-radius: 3px;
+      letter-spacing: 3px;
+      border: 1px solid @color-tips;
+    }
+
+    #name.bad {
+      background: lighter(@color-base,30%);
+      border: 1px solid @color-base;
+    }
+
+    #password.bad,
+    #stealth.bad {
+      background: lighter(@color-base,30%);
+      border: 1px solid @color-base;
+    }
+  }
+
+  div.card2 {
+    position: relative;
+    width: 98%;
+    height: 260px;
+    float: left;
+    display: block;
+    border-radius: 8px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 0 2px rgba(60, 64, 67, 0.3);
+    box-shadow: 0 0 2px rgba(60, 64, 67, 0.3);
+    margin: 0.5%;
+    line-height: 160%;
+
+    > div {
+      margin: 16px;
+    }
+
+    hr {
+      border: 0;
+      border-bottom: 1px solid rgba(255,255,255,0.3);
+      border-top: 1px solid rgba(0,0,0,0.1);
+    }
+  }
+}
+
+.labels {
+  margin: 30px 0 5px;
+  padding: 0;
+  display: block;
+  clear: both;
+}
+
+.labels label {
+  font-style: italic;
+  text-align: center;
+}
+
+.labels.one label:nth-child(1) {
+  padding: 0 30px;
+}
+
+.labels.one label:nth-child(2) {
+  padding: 0 55px;
+}
+
+.labels.one label:nth-child(3) {
+  padding: 0 88px;
+}
+
+.labels.two {
+  margin-left: 120px;
+}
+
+.labels.two label:nth-child(1) {
+  padding: 0 70px;
+}
+
+.labels.two label:nth-child(2) {
+  padding: 0 50px;
+}
+
+.passwordset {
+  float: left;
+}
+
+#buttonset {
+  float: left;
+  margin: 0 16px;
+  padding: 0;
+}
+
+#buttonset button {
+  float: left;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 3px 8px 4px;
+  border: 1px solid #000;
+  border-left: 0;
+  color: #fff;
+  text-shadow: -1px -1px 0 #000;
+  background: -webkit-gradient(linear, left bottom, left top, from(#2b2b2b), to(#4d4d4d));
+}
+
+#buttonset button:hover {
+  background: -webkit-gradient(linear, left bottom, left top, from(#444), to(#666));
+}
+
+#buttonset button:active,
+#buttonset button:focus {
+  background: -webkit-gradient(linear, left bottom, left top, from(#4d4d4d), to(#2b2b2b));
+}
+
+#buttonset button.toggle {
+  background: -webkit-gradient(linear, left bottom, left top, from(#4ae64a), to(#08ce08));
+  text-shadow: 0 0 3px #000;
+}
+
+#buttonset button:first-child {
+  border-left: 1px solid #000;
+  border-radius: 13px 0 0 13px;
+}
+
+#buttonset button:nth-child(4) {
+  border-radius: 0 13px 13px 0;
+}
+
+#length {
+  float: left;
+  margin: 4px 20px 0 15px;
+}
+
+#about {
+  width: 450px;
+  margin: 0 auto;
+  padding: 20px 130px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.answer_box {
+  width: 300px;
+  height: 98px;
+  margin-left: -155px;
+  position: absolute;
+  top: 45px;
+  text-align: center;
+  padding: 20px;
+  text-shadow: none;
+  font-size: 11px;
+  color: #fff;
+  background: -webkit-gradient(linear, left bottom, left top, from(#4d4d4d), to(#2b2b2b));
+  border-radius: 20px;
+}
+
+.answer_box div {
+  position: absolute;
+  top: 138px;
+  left: 148px;
+  height: 0;
+  width: 0;
+  border-width: 7px;
+  border-style: solid;
+  border-color: #4d4d4d transparent transparent transparent;
+}
+
+
+@media (max-width: 900px) {
+
+  div.card {
+    width: 48%!important;
+    margin:0.5%!important;
+  }
+  div.card2 {
+    width: 97%!important;
+    margin:0.5%!important;
+  }
+}

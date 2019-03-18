@@ -1,3 +1,9 @@
+@color-base: #b846d3;
+@color-complement: spin(@color-base, 180);
+@color-text: #4a4a4a;
+@color-tips: #a4a4a4;
+@element-width: 208px;
+
 #update_bar{
 						margin:        0 !important;
 						padding:       5px !important;

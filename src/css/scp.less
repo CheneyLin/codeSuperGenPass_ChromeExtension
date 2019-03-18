@@ -1,5 +1,9 @@
 @color-base: #b846d3;
 @color-complement: spin(@color-base, 180);
+@color-text: #4a4a4a;
+@color-tips: #a4a4a4;
+@element-width: 208px;
+
 
 .superchromepass_button {
   color: #fff !important;
@@ -7,6 +11,30 @@
   cursor: pointer !important;
   z-index: 9999 !important;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.5) !important;
+
+  ul {
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+    color: #fff !important;
+
+    li {
+      margin: 0 5px !important;
+      padding: 5px !important;
+      list-style: none !important;
+      cursor: pointer !important;
+      font-size: 14px !important;
+      line-height: 18px !important;
+      color: lighten(@color-base,15%)!important;
+      font-weight: normal!important;
+    }
+
+    li.active,
+    li:hover {
+      color: @color-base!important;
+      font-weight: bolder!important;
+    }
+  }
 
   b {
     display: block;
@@ -53,7 +81,7 @@
 
     p {
       color: @color-base !important;
-      margin:4px 4px 8px!important;
+      margin: 4px 4px 8px!important;
       padding: 0 !important;
       text-align: center !important;
       font-weight: bold !important;
@@ -75,7 +103,7 @@
       display: block !important;
       clear: both !important;
       outline: none!important;
-      color:#333!important;
+      color: #333!important;
 
       .good {
         background: #effcef !important;
@@ -98,28 +126,6 @@
       background: @color-complement !important;
 
       img {}
-    }
-  }
-
-  ul {
-    margin: 0 !important;
-    padding: 0 !important;
-    list-style: none !important;
-    color: #fff !important;
-
-    li {
-      margin: 0 !important;
-      padding: 0 !important;
-      list-style: none !important;
-      color: #fff !important;
-      cursor: pointer !important;
-      font-size: 11px !important;
-      line-height: 18px !important;
-    }
-
-    li.active,
-    li:hover {
-      background: rgba(0,0,0,0.15) !important;
     }
   }
 }

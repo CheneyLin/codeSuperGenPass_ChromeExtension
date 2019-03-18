@@ -3,11 +3,7 @@
 
 <head>
 
-<meta http-equiv="Content-Security-Policy" content="script-src 'self';">
-<link href="css/popup.css" rel="stylesheet" type="text/css" />
-  <style type="text/css">
-    
-  </style>
+  <link href="css/popup.css" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="js/jquery.js"></script>
   <script type="text/javascript" src="js/password.class.js"></script>
   <script type="text/javascript" src="js/supergenpass.js"></script>
@@ -18,8 +14,11 @@
 
   <div>
 
-    <h1 id="popup_title">popup_title</h1>
-
+    <div id="popup_head">
+      <h2><img src="images/logo.png"></h2>
+      <h1 id="popup_title">popup_title</h1>
+      <div id="popup_option_icon"><a href="chrome-extension://dcdaiabaidgglbdapfdaengffpdpicbk/scp_options.html" target="_blank"><img src="images/option.png"></a></div>
+    </div>
     <div id="domain_input">
       <label class="main" for="domain" id="popup_domain_name">popup_domain_name</label>
       <input id="domain" type="text">
@@ -31,7 +30,9 @@
       <label for="disabletld" id="popup_disable_subdomain_removal">Disable subdomain removal</label>
     </div>
 
-    <ul id="scp_list"></ul>
+    <div id="scp_list_title">
+      <label class="main" id="popup_list_title">popup_list_title</label></div>
+    <ul id="scp_list" class="hide"></ul>
 
     <div id="master_input" style="display: none">
       <label class="main" id="dscr" for="Passwd">popup_master_password</label>
@@ -40,7 +41,7 @@
 
     <div id="generated" style="display: none">
 
-      <label class="main" for="genpasswd" id="">popup_your_generated_password</label>
+      <label class="main" for="genpasswd" id="popup_your_generated_password">popup_your_generated_password</label>
       <input id="genpasswd" type="password">
       <div id="hint" style="display:none">Click to reveal password
         <div></div>

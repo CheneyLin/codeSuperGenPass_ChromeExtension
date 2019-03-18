@@ -38,7 +38,7 @@
     "jshint": "^2.10.2",
     "lodash": "^4.17.11",
     "minimatch": "^3.0.4",
-    "semver": "^3.0.1",
+    "semver": "^4.3.6",
     "uglify-save-license": "^0.4.1",
     "yargs": "^4.8.1"
   },

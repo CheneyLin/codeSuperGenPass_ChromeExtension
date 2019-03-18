@@ -5,6 +5,27 @@
   z-index: 9999 !important;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.5) !important;
 }
+.superchromepass_button ul {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  color: #fff !important;
+}
+.superchromepass_button ul li {
+  margin: 0 5px !important;
+  padding: 5px !important;
+  list-style: none !important;
+  cursor: pointer !important;
+  font-size: 14px !important;
+  line-height: 18px !important;
+  color: #d084e2 !important;
+  font-weight: normal!important;
+}
+.superchromepass_button ul li.active,
+.superchromepass_button ul li:hover {
+  color: #b846d3 !important;
+  font-weight: bolder!important;
+}
 .superchromepass_button b {
   display: block;
   width: 100%;
@@ -46,7 +67,7 @@
 }
 .superchromepass_button.expanded p {
   color: #b846d3 !important;
-  margin: 4px 4px 8px!important;
+  margin: 4px 4px 8px!important !important;
   padding: 0 !important;
   text-align: center !important;
   font-weight: bold !important;
@@ -82,23 +103,4 @@
 }
 .superchromepass_button.corner b {
   background: #61d346 !important;
-}
-.superchromepass_button ul {
-  margin: 0 !important;
-  padding: 0 !important;
-  list-style: none !important;
-  color: #fff !important;
-}
-.superchromepass_button ul li {
-  margin: 0 !important;
-  padding: 0 !important;
-  list-style: none !important;
-  color: #fff !important;
-  cursor: pointer !important;
-  font-size: 11px !important;
-  line-height: 18px !important;
-}
-.superchromepass_button ul li.active,
-.superchromepass_button ul li:hover {
-  background: rgba(0, 0, 0, 0.15) !important;
 }

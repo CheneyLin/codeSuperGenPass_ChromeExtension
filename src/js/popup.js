@@ -42,15 +42,22 @@ $(document).ready(function() {
   $("#popup_your_generated_password").html(chrome.i18n.getMessage("popup_your_generated_password"));
   $("#popup_domain_name").html(chrome.i18n.getMessage("popup_domain_name"));
   $("#regen").html(chrome.i18n.getMessage("popup_generate"));
+  $("#popup_list_title").html(chrome.i18n.getMessage("popup_list_title"));
+
 
 
   //Get the URL from the selected tab
   chrome.tabs.getSelected(null, function(tab) {
 
-    $('#domainh,#domain').val(gp2_process_uri(tab.url, false));
+    $('#domain').val(gp2_process_uri(tab.url, false));
+    $('#domainh').val(tab.url);
 
     if (passes.length == 0) {
       $('#master_input').show();
+      $('#regen').removeClass('forbit');
+
+      $('#scp_list_title').hide();
+            $('#scp_list').hide();
       passid = null;
     } else if (passes.length == 1) {
       passid = passes[0];
@@ -61,6 +68,10 @@ $(document).ready(function() {
         genPass(passes[0]);
       }
     } else {
+      $('#master_input').hide();
+      $('#regen').addClass('forbit');
+      $('#scp_list_title').show();
+            $('#scp_list').show();
       $.each(passes, function(i, id) {
         $('#scp_list').append(
           $('<li/>', {
