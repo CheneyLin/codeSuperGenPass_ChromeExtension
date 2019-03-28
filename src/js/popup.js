@@ -57,7 +57,7 @@ $(document).ready(function() {
       $('#regen').removeClass('forbit');
 
       $('#scp_list_title').hide();
-            $('#scp_list').hide();
+      $('#scp_list').hide();
       passid = null;
     } else if (passes.length == 1) {
       passid = passes[0];
@@ -71,7 +71,7 @@ $(document).ready(function() {
       $('#master_input').hide();
       $('#regen').addClass('forbit');
       $('#scp_list_title').show();
-            $('#scp_list').show();
+      $('#scp_list').show();
       $.each(passes, function(i, id) {
         $('#scp_list').append(
           $('<li/>', {
@@ -102,14 +102,20 @@ $(document).ready(function() {
   $('#disabletld').click(function() {
     $('#domain').trigger('blur');
   });
-
-  $('#domain').change(function() {
-    if ($('#domainh').val().indexOf($('#domain').val()) < 0) {
-      $('#domainh').val($('#domain').val());
-    }
-    console.log($('#domainh').val())
+  $('#domain,#password').focus(function() {
+    $(this).addClass('focuson');
   }).blur(function() {
-    $('#domain').val(gp2_process_uri($('#domainh').val(), $('#disabletld').is(':checked')));
+    $(this).removeClass('focuson');
+  });
+  $('#domain').change(function() {
+    //https://github.com/CheneyLin/codeSuperGenPass_ChromeExtension/issues/1
+    //  if ($('#domainh').val().indexOf($('#domain').val()) < 0) {
+    //    $('#domainh').val($('#domain').val());
+    //  }
+    //console.log($('#domainh').val())
+  }).blur(function() {
+    //    $('#domain').val(gp2_process_uri($('#domainh').val(), $('#disabletld').is(':checked')));
+    $('#domain').val(gp2_process_uri($('#domain').val(), $('#disabletld').is(':checked')));
     $('#password').focus();
   });
 

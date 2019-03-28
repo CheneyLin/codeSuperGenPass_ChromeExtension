@@ -102,10 +102,11 @@ input[type=text] {
   border: 1px solid #a4a4a4;
   color: #4a4a4a;
   outline: none!important;
-  background-color: #cacaca;
-}
-input#password {
   background-color: #f1f1f1;
+}
+input[type=password].focuson,
+input[type=text].focuson {
+  background-color: #fff;
 }
 #genpasswd {
   font-family: monospace;

@@ -128,12 +128,15 @@ input[type=text] {
   border: 1px solid @color-tips;
   color: @color-text;
   outline: none!important;
-  background-color: lighten(@color-tips,15%);
-}
-
-input#password {
   background-color: lighten(@color-tips,30%);
 }
+
+input[type=password].focuson,
+input[type=text].focuson {
+  background-color: #fff;
+}
+
+input#password {}
 
 #genpasswd {
   font-family: monospace;
