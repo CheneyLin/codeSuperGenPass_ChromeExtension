@@ -2,9 +2,30 @@ var passid = false,
   sendPass = false,
   passes = JSON.parse(localStorage['passwords'] || '[]');
 
+function selectText(element) {
+  var text = document.getElementById(element);
+  if (document.body.createTextRange) {
+    var range = document.body.createTextRange();
+    range.moveToElementText(text);
+    range.select();
+  } else if (window.getSelection) {
+    var selection = window.getSelection();
+    var range = document.createRange();
+    range.selectNodeContents(text);
+    selection.removeAllRanges();
+    selection.addRange(range);
+    /*if(selection.setBaseAndExtent){
+        selection.setBaseAndExtent(text, 0, text, 1);
+    }*/
+  } else {
+    //alert("none");
+  }
+}
+
 function genPass(passid) {
+  $('#hint,#hint2,#genpasswd_text').stop().hide();
   if (!sendPass && !passid) {
-    console.log('generating without id');
+    //console.log('generating without id');
     pass = SGPLocal(
       $('#password').val(),
       $('#domain').val(),
@@ -19,11 +40,16 @@ function genPass(passid) {
     }
     pass = sendPass.generate($('#domain').val(), $('#disabletld').is(':checked'));
   }
-  console.log(sendPass);
-  console.log(pass);
+  //console.log(sendPass);
+  //console.log(pass);
   $('#genpasswd').val(pass.pass);
+  var hilightedHtml = pass.pass.replace(/([+\-]?[0-9]+(\.[0-9]+)?)/g, "<i>$1</i>");
+
+  $('#genpasswd_text').html(hilightedHtml);
   $('#generated').slideDown(250).delay(250);
+
   $('#hint').delay(250).fadeIn(400).delay(3000).fadeOut(400);
+
   $('#regen').removeAttr('disabled');
   chrome.tabs.getSelected(null, function(tab) {
     chrome.tabs.sendRequest(tab.id, {
@@ -43,6 +69,12 @@ $(document).ready(function() {
   $("#popup_domain_name").html(chrome.i18n.getMessage("popup_domain_name"));
   $("#regen").html(chrome.i18n.getMessage("popup_generate"));
   $("#popup_list_title").html(chrome.i18n.getMessage("popup_list_title"));
+  if (passes.length == 1){
+    $("#hint").html(chrome.i18n.getMessage("popup_gen_hint_default") + "<div></div>");
+  }else{
+    $("#hint").html(chrome.i18n.getMessage("popup_gen_hint") + "<div></div>");
+  }
+  $("#hint2").html(chrome.i18n.getMessage("popup_gen_hint2") + "<div></div>");
 
 
 
@@ -51,7 +83,6 @@ $(document).ready(function() {
 
     $('#domain').val(gp2_process_uri(tab.url, false));
     $('#domainh').val(tab.url);
-
     if (passes.length == 0) {
       $('#master_input').show();
       $('#regen').removeClass('forbit');
@@ -60,6 +91,8 @@ $(document).ready(function() {
       $('#scp_list').hide();
       passid = null;
     } else if (passes.length == 1) {
+      $('#scp_list_title').hide();
+      $('#scp_list').hide();
       passid = passes[0];
       sendPass = Pass.init(passid);
       if (sendPass.password() == '') {
@@ -83,7 +116,6 @@ $(document).ready(function() {
             $(this).siblings().removeClass('active');
             $(this).addClass('active');
             sendPass = Pass.init(passid);
-            console.log(sendPass);
             //We need a password input box!
             if (sendPass.password() === false || sendPass.password() == '') {
               $('#master_input').slideDown(250);
@@ -97,6 +129,7 @@ $(document).ready(function() {
       });
     }
 
+    $("#password").focus();
   });
 
   $('#disabletld').click(function() {
@@ -138,10 +171,14 @@ $(document).ready(function() {
     }
   });
 
-  $('#genpasswd').focus(function() {
-    $(this).get(0).type = 'text';
-  }).blur(function() {
-    $(this).get(0).type = 'password';
+  $('#genpasswd').click(function() {
+    console.log('click');
+    //$(this).get(0).type = 'text';
+    $('#genpasswd_text').fadeIn(250).delay(5000).fadeOut(400);
+    selectText('genpasswd_text');
+    document.execCommand("Copy");
+    $('#hint').hide();
+    $('#hint2').fadeIn(400).delay(3000).fadeOut(400);
   });
 
   $('#regen').attr('disabled', 'disabled').click(function() {

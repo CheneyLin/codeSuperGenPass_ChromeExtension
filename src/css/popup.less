@@ -3,6 +3,8 @@
 @color-text: #4a4a4a;
 @color-tips: #a4a4a4;
 @element-width: 208px;
+@color-popup: spin(@color-base, 180);
+@color-inputbackground:lighten(@color-tips,30);
 
 body {
   overflow: visible;
@@ -128,7 +130,7 @@ input[type=text] {
   border: 1px solid @color-tips;
   color: @color-text;
   outline: none!important;
-  background-color: lighten(@color-tips,30%);
+  background-color: @color-inputbackground;
 }
 
 input[type=password].focuson,
@@ -138,10 +140,60 @@ input[type=text].focuson {
 
 input#password {}
 
+#generated {}
+
 #genpasswd {
   font-family: monospace;
   letter-spacing: 1px;
   font-weight: bold;
+}
+
+#genpasswd_text {
+  position: absolute;
+  bottom: 56px;
+  left: 10px;
+  width: @element-width - 10;
+  height: 26px;
+  font-size: 16px;
+  line-height: 26px;
+  margin: 0;
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid @color-tips;
+  color: @color-text;
+  outline: none!important;
+  background-color: @color-inputbackground;
+  font-family: monospace;
+  letter-spacing: 1px;
+  font-weight: bold;
+
+  i {
+    font-style: normal;
+    color: @color-popup;
+      &::selection {
+        background: @color-inputbackground;
+      }
+
+      &::-moz-selection {
+        background: @color-inputbackground;
+      }
+
+      &::-webkit-selection {
+        background: @color-inputbackground;
+      }
+  }
+
+  &::selection {
+    background: @color-inputbackground;
+  }
+
+  &::-moz-selection {
+    background: @color-inputbackground;
+  }
+
+  &::-webkit-selection {
+    background: @color-inputbackground;
+  }
 }
 
 #Len {
@@ -234,12 +286,13 @@ input#password {}
   }
 }
 
-#hint {
+#hint,
+#hint2 {
   width: 165px;
   height: 5px;
   margin: 0 10px;
   position: absolute;
-  bottom: 78px;
+  bottom: 96px;
   line-height: 8px;
   left: 20px;
   text-align: center;
@@ -247,11 +300,13 @@ input#password {}
   text-shadow: none;
   font-size: 11px;
   color: #fff;
-  background: -webkit-gradient(linear, left bottom, left top, from(#4d4d4d), to(#2b2b2b));
+  background: @color-popup;
   border-radius: 20px;
+  box-shadow: 0 -3px 3px #aaa;
 }
 
-#hint div {
+#hint div,
+#hint2 div {
   position: absolute;
   top: 21px;
   left: 78px;
@@ -259,5 +314,5 @@ input#password {}
   width: 0;
   border-width: 4px;
   border-style: solid;
-  border-color: #4d4d4d transparent transparent transparent;
+  border-color: @color-popup transparent transparent transparent;
 }

@@ -7,7 +7,7 @@
   },
   "permissions": ["tabs", "http://*/*", "https://*/*"],
   "update_url": "http://clients2.google.com/service/update2/crx",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "background": {
     "page": "scp_background.html"
   },

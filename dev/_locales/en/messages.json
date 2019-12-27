@@ -31,6 +31,19 @@
     "message": "Choose presetes",
     "description": ""
   },
+  "popup_gen_hint": {
+    "message": "Click to reveal password",
+    "description": ""
+  },
+  "popup_gen_hint_default": {
+    "message": "Auto generated",
+    "description": ""
+  },
+
+  "popup_gen_hint2": {
+    "message": "Copy success",
+    "description": ""
+  },
   "option_list_title": {
     "message": "Profile Name",
     "description": ""
