@@ -246,7 +246,7 @@ input[type=text].focuson {
   color: #fff;
   background: #61d346;
   border-radius: 20px;
-  box-shadow: 0 -3px 3px #333;
+  box-shadow: 0 -3px 3px #aaa;
 }
 #hint div,
 #hint2 div {

@@ -1,7 +1,7 @@
 var passid = false,
   sendPass = false,
-  passes = JSON.parse(localStorage['passwords'] || '[]');
-
+  passes = JSON.parse(localStorage['passwords'] || '[]'),
+  options = JSON.parse(localStorage['options'] || '{}');
 function selectText(element) {
   var text = document.getElementById(element);
   if (document.body.createTextRange) {
@@ -40,8 +40,27 @@ function genPass(passid) {
     }
     pass = sendPass.generate($('#domain').val(), $('#disabletld').is(':checked'));
   }
+
+  if(options.special_characters){
+    var sc='~!@#%^&*()_+=-[]\|}{';
+    var p=pass.pass;
+    var p1=p.substring(0,p.length-2);
+    //var p2=p.substring(p.length-2,p.length-1);
+    //var p3=p.substring(p.length-1,p.length);
+    // console.log(p);
+    // console.log(p1);
+    // console.log(p2);
+    // console.log(p3);
+    var p2=sc.charAt(p.charCodeAt(p.length-2)%sc.length);
+    var p3=sc.charAt(p.charCodeAt(p.length-1)%sc.length);
+    // console.log(p.charCodeAt(p.length-2));
+    // console.log(p2);
+    // console.log(p.charCodeAt(p.length-1));
+    // console.log(p3);
+    pass.pass=p1+p2+p3;
+  }
   //console.log(sendPass);
-  //console.log(pass);
+  //console.log(pass.pass);
   $('#genpasswd').val(pass.pass);
   var hilightedHtml = pass.pass.replace(/([+\-]?[0-9]+(\.[0-9]+)?)/g, "<i>$1</i>");
 

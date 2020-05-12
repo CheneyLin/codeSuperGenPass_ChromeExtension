@@ -59,7 +59,7 @@
 }
 .superchromepass_button.expanded {
   height: auto !important;
-  z-index: 999 !important;
+  z-index: 9999 !important;
   background: #fff !important;
 }
 .superchromepass_button.expanded::before {

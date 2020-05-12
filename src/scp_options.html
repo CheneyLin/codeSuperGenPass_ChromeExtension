@@ -23,17 +23,17 @@
     </div>
     <div class="panel" id="panel_add">
       <div class="card">
-        <div class="title"><i>Profile Name</i><br>
+        <div class="title"><i id="option_list_title">Profile Name</i><br>
           <input id="name" type="text" value="My Password" autofocus="autofocus">
         </div>
-        <div class="storestr"><i>Master Password</i><br>
+        <div class="storestr"><i id="option_list_password">Master Password</i><br>
           <div class="inputset">
             <input type="password" id="password" value="">
             <div class="reveal" title="Reveal password"><svg id="csdnc-m-passwords-visible" viewBox="0 0 1433 1024" width="100%" height="100%"><path d="M716.8 989.9008c-242.0736 0-462.848-137.0112-662.3232-410.9312-27.136-37.1712-27.136-96.768 0-133.9392C253.952 171.1104 474.7264 34.0992 716.8 34.0992s462.848 137.0112 662.3232 410.9312c27.136 37.1712 27.136 96.768 0 133.9392C1179.648 852.8896 958.8736 989.9008 716.8 989.9008z m0-819.2C514.3552 170.7008 327.2704 281.8048 150.7328 512 327.2704 742.1952 514.2528 853.2992 716.8 853.2992c202.4448 0 389.5296-111.104 566.0672-341.2992C1106.3296 281.8048 919.3472 170.7008 716.8 170.7008z m0 563.2a221.9008 221.9008 0 1 1 0-443.8016 221.9008 221.9008 0 0 1 0 443.8016zM716.8 614.4a102.4 102.4 0 1 0 0-204.8 102.4 102.4 0 0 0 0 204.8z"></path></svg></div>
           </div>
         </div>
 
-        <div class="stealth"><i>Stealth Password</i><br>
+        <div class="stealth"><i id="option_list_stealth">Stealth Password</i><br>
           <div class="inputset">
             <input type="password" id="stealth" value="">
             <div class="reveal" title="Reveal password"><svg id="csdnc-m-passwords-visible" viewBox="0 0 1433 1024" width="100%" height="100%"><path d="M716.8 989.9008c-242.0736 0-462.848-137.0112-662.3232-410.9312-27.136-37.1712-27.136-96.768 0-133.9392C253.952 171.1104 474.7264 34.0992 716.8 34.0992s462.848 137.0112 662.3232 410.9312c27.136 37.1712 27.136 96.768 0 133.9392C1179.648 852.8896 958.8736 989.9008 716.8 989.9008z m0-819.2C514.3552 170.7008 327.2704 281.8048 150.7328 512 327.2704 742.1952 514.2528 853.2992 716.8 853.2992c202.4448 0 389.5296-111.104 566.0672-341.2992C1106.3296 281.8048 919.3472 170.7008 716.8 170.7008z m0 563.2a221.9008 221.9008 0 1 1 0-443.8016 221.9008 221.9008 0 0 1 0 443.8016zM716.8 614.4a102.4 102.4 0 1 0 0-204.8 102.4 102.4 0 0 0 0 204.8z"></path></svg></div>
@@ -68,16 +68,19 @@
   <div class="wrap">
     <div class="card2" id="general">
       <div>
-        <h3>General Options</h3>
+        <h3 id="option_general_options">General Options</h3>
 
         <input type="checkbox" id="notonload" checked="checked">
-        <label for="notonload">Automatically add SuperChromePass buttons to all password fields when the page loads</label>
+        <label for="notonload" id="option_auto_form_label">Automatically add SuperChromePass buttons to all password fields when the page loads</label>
+<p></p>
+        <input type="checkbox" id="special_characters" checked="">
+        <label for="special_characters" id="option_special_characters_label">Convert last 2 characters to special characters, include ( ~!@#%^&*()_+=-[]\|}{ )</label>
 
-          <h3>Shortcut Key</h3>
+          <h3 id="option_shortcut_key">Shortcut Key</h3>
 
         <label for="key_key">Ctrl + Shift</label>
         <input id="key_key" maxlength="1" type="text" style="width: 25px; font-weight: bold; text-align: center;">
-        <label for="key_key">Shortcut Combination (when inside a password box)</label>
+        <label for="key_key" id="option_shortcut_key_label">Shortcut Combination (when inside a password box)</label>
                 <hr>
                 Copyright 70app.com, All Rights Reserved.<br>
                 <a href="https://www.70apps.com/supergenpass/">Offical Website</a><br>

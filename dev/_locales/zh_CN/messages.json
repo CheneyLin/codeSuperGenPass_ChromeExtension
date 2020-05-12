@@ -46,7 +46,11 @@
   },
 
   "option_list_title": {
-    "message": "配置",
+    "message": "配置名称",
+    "description": ""
+  },
+  "option_list_title_newpassword": {
+    "message": "我的密码",
     "description": ""
   },
   "option_list_password": {
@@ -57,9 +61,33 @@
     "message": "额外加盐",
     "description": ""
   },
-  "input_title": {
-    "message": "输入主密码回车",
+  "option_input_title": {
+    "message": "新增配置",
+    "description": ""
+  },
+
+  "option_del_title": {
+    "message": "删除配置",
+    "description": ""
+  },
+  "option_general_options": {
+    "message": "更多选项",
+    "description": ""
+  },
+  "option_auto_form_label": {
+    "message": "自动在密码输入框后添加超级密码快捷按钮",
+    "description": ""
+  },
+  "option_special_characters_label": {
+    "message": "支持特殊字符，把最后两位字符换算成特殊字符",
+    "description": ""
+  },
+  "option_shortcut_key": {
+    "message": "快捷键",
+    "description": ""
+  },
+  "option_shortcut_key_label": {
+    "message": "编辑密码输入框时快速调用密码",
     "description": ""
   }
-
 }

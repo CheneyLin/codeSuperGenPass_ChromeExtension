@@ -1,4 +1,17 @@
 $(document).ready(function() {
+//多语言处理
+  $("#option_list_title").html(chrome.i18n.getMessage("option_list_title"));
+  $("#option_list_password").html(chrome.i18n.getMessage("option_list_password"));
+  $("#option_list_stealth").html(chrome.i18n.getMessage("option_list_stealth"));
+  $("#name").val(chrome.i18n.getMessage("option_list_title_newpassword"));
+  $("#save").html(chrome.i18n.getMessage("option_input_title"));
+  $("#option_general_options").html(chrome.i18n.getMessage("option_general_options"));
+  $("#option_auto_form_label").html(chrome.i18n.getMessage("option_auto_form_label"));
+  $("#option_special_characters_label").html(chrome.i18n.getMessage("option_special_characters_label"));
+  $("#option_shortcut_key").html(chrome.i18n.getMessage("option_shortcut_key"));
+  $("#option_shortcut_key_label").html(chrome.i18n.getMessage("option_shortcut_key_label"));
+
+
   addpassword = (function(i, fade) {
     stealth = localStorage['password_' + i + '_salt'] || '';
     storestr = localStorage['password_' + i + '_type'] == 'none' ?
@@ -20,22 +33,22 @@ $(document).ready(function() {
 
         $('<div/>', {
           class: 'title'
-        }).html('<i>Profile Name</i><br>' + localStorage['password_' + i + '_name'] || ''),
+        }).html('<i>'+chrome.i18n.getMessage("option_list_title")+'</i><br>' + localStorage['password_' + i + '_name'] || ''),
         $('<div/>', {
           class: 'length'
         }).html(localStorage['password_' + i + '_length'] || ''),
         $('<div/>', {
           class: 'storestr'
-        }).html('<i>Master Password</i><br><div title="' + storestr + '">' + storestr2 + '</div>'),
+        }).html('<i>'+chrome.i18n.getMessage("option_list_password")+'</i><br><div title="' + storestr + '">' + storestr2 + '</div>'),
         $('<div/>', {
           class: 'stealth'
-        }).html('<i>Password Stealth</i><br>' + stealth.length > 0 ? 'With Stealth' : ' '),
+        }).html('<i>'+chrome.i18n.getMessage("option_list_stealth")+'</i><br>' + stealth.length > 0 ? 'With Stealth' : ' '),
         $('<div/>', {
           class: 'action'
         }).append(
           $('<button/>', {
             class: 'delete'
-          }).text('Delete Password')
+          }).text(chrome.i18n.getMessage("option_del_title"))
         )
       )
     );
@@ -190,6 +203,16 @@ $(document).ready(function() {
     localStorage['options'] = JSON.stringify(options);
   });
 
+  $('#special_characters').click(function() {
+    var options = JSON.parse(localStorage['options'] || '{}');
+    if ($(this).is(':checked')) {
+      options.special_characters = true;
+    } else {
+      options.special_characters = false;
+    }
+    localStorage['options'] = JSON.stringify(options);
+  });
+
   $('#key_key').keyup(function(e) {
     $('#key_key').val(String.fromCharCode(e.which));
     var options = JSON.parse(localStorage['options'] || '{}');
@@ -203,5 +226,8 @@ $(document).ready(function() {
   options.notonload ?
     $('#notonload').removeAttr('checked', 'checked') :
     $('#notonload').attr('checked', 'checked');
+  options.special_characters ?
+    $('#special_characters').attr('checked', 'checked') :
+    $('#special_characters').removeAttr('checked', 'checked');
 
 });

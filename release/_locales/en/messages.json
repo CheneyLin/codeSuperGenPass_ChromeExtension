@@ -48,6 +48,10 @@
     "message": "Profile Name",
     "description": ""
   },
+  "option_list_title_newpassword": {
+    "message": "My Password",
+    "description": ""
+  },
   "option_list_password": {
     "message": "Master Password",
     "description": ""
@@ -56,9 +60,32 @@
     "message": "Password Stealth",
     "description": ""
   },
-
-  "input_title": {
-    "message": "Enter Main Password",
+  "option_input_title": {
+    "message": "Add Profile",
+    "description": ""
+  },
+  "option_del_title": {
+    "message": "Delete Profile",
+    "description": ""
+  },
+  "option_general_options": {
+    "message": "General Options",
+    "description": ""
+  },
+  "option_auto_form_label": {
+    "message": "Automatically add SuperChromePass buttons to all password fields when the page loads",
+    "description": ""
+  },
+  "option_special_characters_label": {
+    "message": "Convert last 2 characters to special characters",
+    "description": ""
+  },
+  "option_shortcut_key": {
+    "message": "Shortcut Key",
+    "description": ""
+  },
+  "option_shortcut_key_label": {
+    "message": "Shortcut Combination (when inside a password box)",
     "description": ""
   }
 }

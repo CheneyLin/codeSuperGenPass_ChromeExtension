@@ -26,6 +26,16 @@
   cnpm  install  --save-dev gulp-concat gulp-cssnano gulp-file-include gulp-htmlmin gulp-imagemin gulp-jshint gulp-less gulp-minify gulp-minify-css gulp-replace gulp-sequence gulp-sourcemaps gulp-tinypng-compress gulp-uglify gulp-util gulp-webserver isobject jshint lodash minimatch semver uglify-save-license yargs
   ```
 
+###npm加速
+
+  ```
+  npm config set registry https://registry.npm.taobao.org
+  npm install -g cnpm --registry=https://registry.npm.taobao.org
+  ```
+## Chrome Extension Package
+
+https://support.google.com/chrome/a/answer/2714278?hl=en
+
 ## commit format
 
   ```
