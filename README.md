@@ -1,7 +1,7 @@
 # codeSuperGenPass_ChromeExtension
 
  * a supergenpass chrome extension
-
+ * download:https://chrome.google.com/webstore/detail/superchromepass/dcdaiabaidgglbdapfdaengffpdpicbk
 
 ## more resources
 
