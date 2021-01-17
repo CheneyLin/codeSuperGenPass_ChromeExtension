@@ -18,7 +18,7 @@
   },
   "content_scripts": [{
     "css": ["css/scp.css"],
-    "js": ["js/jquery.js", "js/superchromepass.js", "js/supergenpass.js"],
+    "js": ["js/jquery.js", "js/superchromepass.js", "js/supergenpass.js", "js/identicon5.js"],
     "matches": ["http://*/*", "https://*/*"]
   }],
   "description": "Generate secure, per-domain password based on an original master password, with the click of a button",
