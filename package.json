@@ -36,7 +36,7 @@
     "gulp-webserver": "^0.9.1",
     "isobject": "^2.1.0",
     "jshint": "^2.11.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "minimatch": "^3.0.4",
     "semver": "^4.3.6",
     "uglify-save-license": "^0.4.1",
