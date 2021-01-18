@@ -2,6 +2,20 @@ var passid = false,
   sendPass = false,
   passes = JSON.parse(localStorage['passwords'] || '[]'),
   options = JSON.parse(localStorage['options'] || '{}');
+
+function generateIcon() {
+  var seed = $('#password').val();
+  if (seed) {
+    $('#password_feedback').show();
+    for (var i = 0; i <= 4; i = i + 1) {
+      seed = hex_md5(seed).toString();
+    }
+    identicon5($('#password_feedback').get(0), seed, 16);
+  } else {
+    $('#password_feedback').hide();
+  }
+}
+
 function selectText(element) {
   var text = document.getElementById(element);
   if (document.body.createTextRange) {
@@ -172,6 +186,10 @@ $(document).ready(function() {
   });
 
   $('#password').keyup(function(e) {
+    if (options.include_identicon) {
+      generateIcon();
+    }
+
     this.value.length > 0 ?
       $('#regen').removeAttr('disabled') :
       $('#regen').attr('disabled', 'disabled');

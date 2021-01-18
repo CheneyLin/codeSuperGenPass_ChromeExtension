@@ -107,14 +107,24 @@ p.left {
   text-align: left;
 }
 
-#master_input input.good {
-  background: #effcef !important;
-  outline: none!important;
+#master_input {
+  position: relative;
+
+  input.good {
+    background: #effcef !important;
+    outline: none!important;
+  }
+
+  input.bad {
+    background: #ffe8ea !important;
+    outline: none!important;
+  }
 }
 
-#master_input input.bad {
-  background: #ffe8ea !important;
-  outline: none!important;
+#password_feedback {
+  position: absolute;
+  right: 20px;
+  top: 35px;
 }
 
 input[type=password],

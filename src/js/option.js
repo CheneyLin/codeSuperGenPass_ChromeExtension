@@ -213,6 +213,16 @@ $(document).ready(function() {
     localStorage['options'] = JSON.stringify(options);
   });
 
+  $('#include_identicon').click(function() {
+    var options = JSON.parse(localStorage['options'] || '{}');
+    if ($(this).is(':checked')) {
+      options.include_identicon = true;
+    } else {
+      options.include_identicon = false;
+    }
+    localStorage['options'] = JSON.stringify(options);
+  });
+
   $('#key_key').keyup(function(e) {
     $('#key_key').val(String.fromCharCode(e.which));
     var options = JSON.parse(localStorage['options'] || '{}');
@@ -229,5 +239,7 @@ $(document).ready(function() {
   options.special_characters ?
     $('#special_characters').attr('checked', 'checked') :
     $('#special_characters').removeAttr('checked', 'checked');
-
+  options.include_identicon ?
+    $('#include_identicon').attr('checked', 'checked') :
+    $('#include_identicon').removeAttr('checked', 'checked');
 });
