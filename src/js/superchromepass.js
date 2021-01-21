@@ -145,7 +145,7 @@ $(document).ready(function() {
       width: SizeInput,
       height: SizeInput
     }, 150).addClass('corner').removeClass('expanded').
-    children('input,p').hide(200, function() {
+    children('input,p,canvas').hide(200, function() {
       $(this).remove()
     });
     if ($(id).children('b').length == 0) {
