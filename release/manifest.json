@@ -1,17 +1,17 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "SuperChromePass",
   "options_page": "scp_options.html",
   "options_ui": {
     "page": "scp_options.html"
   },
-  "permissions": ["tabs", "http://*/*", "https://*/*"],
+  "permissions": ["tabs", "storage"],
   "update_url": "http://clients2.google.com/service/update2/crx",
-  "version": "3.0.3",
+  "version": "4.0.0",
   "background": {
-    "page": "scp_background.html"
+    "service_worker": "background.js"
   },
-  "browser_action": {
+  "action": {
     "default_icon": "images/icon_19.png",
     "default_popup": "scp_popup.html",
     "default_title": "SuperChromePass"
@@ -27,7 +27,5 @@
     "16": "images/icon_16.png",
     "48": "images/icon_48.png"
   },
-  "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDAlLX3Arr4AgLYLpO4t/HN6jZI7jS9VPDS4WSWWUczuvhVMJgv5DOJIFtJtDwndHscHZywV47QJwvtKgeVGt2iFIfBH7GsWwP4IUP/mvMPTZQ8CdF0hVFzZEdaYpawWcAGVTnMDWaxcpFqAC6izi+L8gW7C4daaC63h3obYaiAPQIDAQAB",
   "default_locale": "en"
-
 }

@@ -1,0 +1,1 @@
+var v=1.1,session_password=null;chrome.runtime.onInstalled.addListener(function(){chrome.storage.sync.set({color:"#3aa757"},function(o){console.log("The background color is green.")})});

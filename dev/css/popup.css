@@ -81,6 +81,9 @@ p {
 p.left {
   text-align: left;
 }
+#master_input {
+  position: relative;
+}
 #master_input input.good {
   background: #effcef !important;
   outline: none!important;
@@ -88,6 +91,11 @@ p.left {
 #master_input input.bad {
   background: #ffe8ea !important;
   outline: none!important;
+}
+#password_feedback {
+  position: absolute;
+  right: 20px;
+  top: 35px;
 }
 input[type=password],
 input[type=submit],
@@ -134,7 +142,7 @@ input[type=text].focuson {
 }
 #genpasswd_text i {
   font-style: normal;
-  color: #61d346;
+  color: #c86fdd;
 }
 #genpasswd_text i::selection {
   background: #f1f1f1;
@@ -244,7 +252,7 @@ input[type=text].focuson {
   text-shadow: none;
   font-size: 11px;
   color: #fff;
-  background: #61d346;
+  background: #c86fdd;
   border-radius: 20px;
   box-shadow: 0 -3px 3px #aaa;
 }
@@ -257,5 +265,5 @@ input[type=text].focuson {
   width: 0;
   border-width: 4px;
   border-style: solid;
-  border-color: #61d346 transparent transparent transparent;
+  border-color: #c86fdd transparent transparent transparent;
 }

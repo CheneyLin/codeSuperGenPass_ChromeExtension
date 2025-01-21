@@ -145,7 +145,7 @@ $(document).ready(function() {
       width: SizeInput,
       height: SizeInput
     }, 150).addClass('corner').removeClass('expanded').
-    children('input,p').hide(200, function() {
+    children('input,p,canvas').hide(200, function() {
       $(this).remove()
     });
     if ($(id).children('b').length == 0) {
@@ -181,6 +181,9 @@ $(document).ready(function() {
   }
 
   scpinput = function(response, self, tld, id) {
+    if (options.include_identicon) {
+      $(self).append($('<canvas width="16" height="16"></canvas>'));
+    }
     $(self).append(
       $('<input/>', {
         type: 'text', //chrome autocomplete function forbid trick
@@ -189,6 +192,20 @@ $(document).ready(function() {
         autocomplete: 'off'
       }).keyup(function(e) {
         this.type = 'password'; //chrome autocomplete function forbid trick
+        var canvas = $(this).prev('canvas');
+        // Update identicon if it exists
+        if (canvas) {
+          var seed = $(this).val();
+          if (seed) {
+            canvas.show();
+            for (var i = 0; i <= 4; i = i + 1) {
+              seed = hex_md5(seed).toString();
+            }
+            identicon5(canvas.get(0), seed, 16);
+          } else {
+            canvas.hide();
+          }
+        }
         if (response.hash) {
           if (b64_md5($(this).val()) == response.pass) {
             $(this).addClass('good').removeClass('bad');

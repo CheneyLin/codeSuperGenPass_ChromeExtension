@@ -1,0 +1,93 @@
+{
+  "popup_title": {
+    "message": "超级密码",
+    "description": ""
+  },
+
+  "popup_domain_name": {
+    "message": "网站域名",
+    "description": ""
+  },
+
+  "popup_disable_subdomain_removal": {
+    "message": "保持二级域名",
+    "description": ""
+  },
+
+  "popup_master_password": {
+    "message": "输入主密码",
+    "description": ""
+  },
+
+  "popup_your_generated_password": {
+    "message": "当前网站密码",
+    "description": ""
+  },
+
+  "popup_generate": {
+    "message": "点此生成",
+    "description": ""
+  },
+  "popup_list_title": {
+    "message": "选择方案",
+    "description": ""
+  },
+  "popup_gen_hint": {
+    "message": "单击查看明码",
+    "description": ""
+  },
+  "popup_gen_hint_default": {
+    "message": "使用默认密码生成完毕",
+    "description": ""
+  },
+  "popup_gen_hint2": {
+    "message": "成功复制到粘贴板",
+    "description": ""
+  },
+
+  "option_list_title": {
+    "message": "配置名称",
+    "description": ""
+  },
+  "option_list_title_newpassword": {
+    "message": "我的密码",
+    "description": ""
+  },
+  "option_list_password": {
+    "message": "主密码",
+    "description": ""
+  },
+  "option_list_stealth": {
+    "message": "额外加盐",
+    "description": ""
+  },
+  "option_input_title": {
+    "message": "新增配置",
+    "description": ""
+  },
+
+  "option_del_title": {
+    "message": "删除配置",
+    "description": ""
+  },
+  "option_general_options": {
+    "message": "更多选项",
+    "description": ""
+  },
+  "option_auto_form_label": {
+    "message": "自动在密码输入框后添加超级密码快捷按钮",
+    "description": ""
+  },
+  "option_special_characters_label": {
+    "message": "支持特殊字符，把最后两位字符换算成特殊字符",
+    "description": ""
+  },
+  "option_shortcut_key": {
+    "message": "快捷键",
+    "description": ""
+  },
+  "option_shortcut_key_label": {
+    "message": "编辑密码输入框时快速调用密码",
+    "description": ""
+  }
+}

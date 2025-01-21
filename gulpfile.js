@@ -51,7 +51,7 @@ var reloadKey = myDate.getTime();
 
 // task
 
-gulp.task('help', function() {
+gulp.task('help', function () {
 
   console.log('	gulp d	   (dev	测试环境)');
 
@@ -68,19 +68,19 @@ gulp.task('help', function() {
 });
 
 /* 默认 */
-gulp.task('default', function() {
+gulp.task('default', function () {
   gulp.start('help');
 });
 
-gulp.task('d', function(cb) {
+gulp.task('d', function (cb) {
   gulp.start('dev-task-main');
 });
 
-gulp.task('b', function(cb) {
+gulp.task('b', function (cb) {
   gulp.start('build-task-main');
 });
 
-gulp.task('w', function() {
+gulp.task('w', function () {
   gulp.start('watch-task-main');
 });
 
@@ -89,7 +89,7 @@ gulp.task('w', function() {
 // ===============================================================
 // task-main
 // ===============================================================
-gulp.task('task-main', function() {
+gulp.task('task-main', function () {
 
   util.log('task web');
 
@@ -112,6 +112,8 @@ gulp.task('task-main', function() {
 
     gulp.src(config_data.js)
       .pipe(gulp.dest(config_data.dest + 'js/'));
+    gulp.src(config_data.root_js)
+      .pipe(gulp.dest(config_data.dest + ''));
 
     gulp.src(config_data.css)
       .pipe(minify())
@@ -143,6 +145,13 @@ gulp.task('task-main', function() {
     gulp.src(config_data.js)
       .pipe(uglify())
       .pipe(gulp.dest(config_data.prod + 'js/'));
+    gulp.src(config_data.root_js)
+      .pipe(uglify())
+      .pipe(gulp.dest(config_data.prod + ''));
+
+
+
+
 
     gulp.src(config_data.css)
       .pipe(minify())
@@ -157,21 +166,21 @@ gulp.task('task-main', function() {
   }
 });
 
-gulp.task('watch-task-main', function() {
+gulp.task('watch-task-main', function () {
   gulp.watch(config_data.html[0], ['task-main']);
   gulp.watch(config_data.js[0], ['task-main']);
   gulp.watch(config_data.css[0], ['task-main']);
   gulp.watch(config_data.less[0], ['task-main']);
 });
 
-gulp.task('dev-task-main', function() {
+gulp.task('dev-task-main', function () {
   modeDev = true;
   //gulpSequence('zt-public', 'task-main')();
   gulp.start('task-main');
   util.log('task finished.');
 });
 
-gulp.task('build-task-main', function() {
+gulp.task('build-task-main', function () {
   modeDev = false;
   //gulpSequence('zt-public', 'task-main')();
   gulp.start('task-main');

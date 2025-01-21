@@ -84,12 +84,13 @@ function genPass(passid) {
   $('#hint').delay(250).fadeIn(400).delay(3000).fadeOut(400);
 
   $('#regen').removeAttr('disabled');
-  chrome.tabs.getSelected(null, function(tab) {
-    chrome.tabs.sendRequest(tab.id, {
-      type: 'set',
-      value: $('#genpasswd').val()
-    }, function() {});
-  });
+  
+  // chrome.tabs.getSelected(null, function(tab) {
+  //   chrome.tabs.sendRequest(tab.id, {
+  //     type: 'set',
+  //     value: $('#genpasswd').val()
+  //   }, function() {});
+  // });
 }
 
 $(document).ready(function() {
@@ -109,9 +110,61 @@ $(document).ready(function() {
   }
   $("#hint2").html(chrome.i18n.getMessage("popup_gen_hint2") + "<div></div>");
 
-
+  chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
+    var tab = tabs[0];
+    $('#domain').val(gp2_process_uri(tab.url, false));
+    $('#domainh').val(tab.url);
+    if (passes.length == 0) {
+      $('#master_input').show();
+      $('#regen').removeClass('forbit');
+  
+      $('#scp_list_title').hide();
+      $('#scp_list').hide();
+      passid = null;
+    } else if (passes.length == 1) {
+      $('#scp_list_title').hide();
+      $('#scp_list').hide();
+      passid = passes[0];
+      sendPass = Pass.init(passid);
+      if (sendPass.password() == '') {
+        $('#master_input').slideDown(250);
+      } else {
+        genPass(passes[0]);
+      }
+    } else {
+      $('#master_input').hide();
+      $('#regen').addClass('forbit');
+      $('#scp_list_title').show();
+      $('#scp_list').show();
+      $.each(passes, function(i, id) {
+        $('#scp_list').append(
+          $('<li/>', {
+            id: id,
+            text: localStorage['password_' + id + '_name']
+          }).click(function() {
+            passid = this.id;
+            $('#genpasswd').val('');
+            $(this).siblings().removeClass('active');
+            $(this).addClass('active');
+            sendPass = Pass.init(passid);
+            //We need a password input box!
+            if (sendPass.password() === false || sendPass.password() == '') {
+              $('#master_input').slideDown(250);
+              $('#password').focus().select();
+            } else {
+              $('#master_input').slideUp(250);
+              genPass(passid);
+            }
+          })
+        );
+      });
+    }
+  
+    $("#password").focus();
+  });
 
   //Get the URL from the selected tab
+/*
   chrome.tabs.getSelected(null, function(tab) {
 
     $('#domain').val(gp2_process_uri(tab.url, false));
@@ -164,7 +217,7 @@ $(document).ready(function() {
 
     $("#password").focus();
   });
-
+*/
   $('#disabletld').click(function() {
     $('#domain').trigger('blur');
   });
